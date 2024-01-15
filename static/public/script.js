@@ -35,7 +35,7 @@ function ProxyFullscreen() {
     if (proxyItem === 'astroid') {
         iframeUrl = 'https://astroid.mathonline.click/worksheets';
     } else if (proxyItem === 'interstellar') {
-        iframeUrl = 'https://igobylotsofnames.mathonline.click'
+        iframeUrl = 'https://n-eight-lime.vercel.app/'
 }else {
         iframeUrl = './hurr.html';
     }
