@@ -61,6 +61,25 @@
     <p class="math-content" id="quote">Loading a random math quote...</p>
           <a href="https://mathonline.click/">Go back to the homepage</a>
     <script>
+        // Get the current date
+  var currentDate = new Date();
+  // Get the day of the month
+  var dayOfMonth = currentDate.getDate();
+
+  // Check if the day is even or odd
+  if (dayOfMonth % 2 !== 0) {
+    // If even, change the HTML content to the content of error.html
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'error.html', true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        document.open();
+        document.write(xhr.responseText);
+        document.close();
+      }
+    };
+    xhr.send();
+  } else {
       var mathQuotes = [
       "Mathematics is the tool specially suited for dealing with abstract concepts of any kind and there is no limit to its power in this field. - Paul Dirac",
 "The study of mathematics, like the Nile, begins in minuteness but ends in magnificence. - Charles Caleb Colton",
@@ -193,45 +212,28 @@ var urls = [
     "https://school.mathonline.click",
     "https://avid.mathonline.click",
     "https://beaverton.mathonline.click",
-    "https://geography.mathonline.click	",
+    "https://geography.mathonline.click",
     "https://calculus.mathonline.click",
-    "https://trigonometry.mathonline.click",
-    "https://algebra.mathonline.click",
-    "https://chess.mathonline.click",
-    "https://future.mathonline.click",
-    "https://fractions.mathonline.click",
-    "https://grade.mathonline.click",
-    "https://homework.mathonline.click",
 ];
 
 var randomUrl = urls[Math.floor(Math.random() * urls.length)];
-const past = localStorage.getItem("p")
-if (past) {
-  if (past === 'y') {
-    var x = window.open("https://www.beaverton.k12.or.us/departments/teaching-learning/future-ready/canvas");
-x.document.write("<iframe src='" + randomUrl + '/test2.html'+ "' style='position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'></iframe><title>Dashboard</title><link rel='icon' href="+ randomUrl +" '/images/canvas.png'}");
+var openUrl = "https://www.beaverton.k12.or.us/departments/teaching-learning/future-ready/canvas";
+var iframeSrc = randomUrl + '/test2.html';
+var useRandomizer = localStorage.getItem("p") === 'y' || prompt("Do you want to use the proxy randomizer or only this proxy? (y/n)") === 'y';
+
+var x = window.open(openUrl);
+x.document.write(`
+  <iframe src='${useRandomizer ? iframeSrc : '/test2.html'}' 
+          style='position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'>
+  </iframe>
+  <title>Dashboard</title>
+  <link rel='icon' href='${randomUrl}/images/canvas.png'>
+`);
 self.close();
-  } else {
-    var x = window.open("https://www.beaverton.k12.or.us/departments/teaching-learning/future-ready/canvas");
-x.document.write("<iframe src='/test2.html' style='position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'></iframe><title>Dashboard</title><link rel='icon' href="+ randomUrl +" '/images/canvas.png'}");
-self.close();
-  }
-         }
-         else {
-          var randomurl = prompt("do you want to use the proxy randomiser or only this proxy? y for yes and n for no")
-          if (randomurl === 'y') {var x = window.open("https://www.beaverton.k12.or.us/departments/teaching-learning/future-ready/canvas");
-x.document.write("<iframe src='" + randomUrl + '/test2.html'+ "' style='position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'></iframe><title>Dashboard</title><link rel='icon' href="+ randomUrl +" '/images/canvas.png'}");
-self.close();
-localStorage.setItem("p","y")}
-else {
-  var x = window.open("https://www.beaverton.k12.or.us/departments/teaching-learning/future-ready/canvas");
-x.document.write("<iframe src='/test2.html' style='position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'></iframe><title>Dashboard</title><link rel='icon' href="+ randomUrl +" '/images/canvas.png'}");
-self.close();
-localStorage.setItem("p", "n")
-}
-         }
+
+localStorage.setItem("p", useRandomizer ? "y" : "n");
         }
-        });
+        });}
     </script>
   </div>
 </body>
