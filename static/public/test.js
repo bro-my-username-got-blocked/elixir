@@ -3,11 +3,14 @@ const themeid = localStorage.getItem("style");
 themeEle = document.createElement("link");
 themeEle.rel="stylesheet";
 if (themeid === "mainStyle") {
-  themeEle.href = "./default.css"
+  themeEle.href = "./css/default.css"
 }
 if (themeid === "darkStyle") {
-    themeEle.href = "./dm.css";
+    themeEle.href = "./css/dm.css";
+} 
+if (themeid === "frozenStyle") {
+  themeEle.href="./css/frozen.css"
 } else {
-  themeEle.href = "./default.css"
+  themeEle.href = "./css/default.css"
 }
 document.body.appendChild(themeEle);
