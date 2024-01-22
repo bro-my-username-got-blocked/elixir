@@ -70,7 +70,7 @@
   if (dayOfMonth % 2 !== 0) {
     // If even, change the HTML content to the content of error.html
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'index.html', true);
+    xhr.open('GET', 'error.html', true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
         document.open();
