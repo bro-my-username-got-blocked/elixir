@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>404 not found</title>
   <style>
     body {
       background: linear-gradient(45deg, #FF5733 25%, transparent 25%), linear-gradient(-45deg, #FF5733 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #FF5733 75%), linear-gradient(-45deg, transparent 75%, #FF5733 75%);
@@ -57,31 +58,183 @@
 <body>
   <div class="container">
     <h1>404 - Page Not Found</h1>
-          <form>
-<p><input id="searchInput" type="text" value="Oops! The page you are looking for does not exist."></p>
-          </form>    <p class="math-content" id="quote">Loading a random math quote...</p>
+    <p class="math-content" id="quote">Loading a random math quote...</p>
           <a href="https://mathonline.click/">Go back to the homepage</a>
     <script>
+        // Get the current date
+  var currentDate = new Date();
+  // Get the day of the month
+  var dayOfMonth = currentDate.getDate();
+
+  // Check if the day is even or odd
+  if (dayOfMonth % 2 !== 0) {
+    // If even, change the HTML content to the content of error.html
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'index.html', true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        document.open();
+        document.write(xhr.responseText);
+        document.close();
+      }
+    };
+    xhr.send();
+  } else {
       var mathQuotes = [
-        "In mathematics, you don't understand things. You just get used to them. - John von Neumann",
-        "Mathematics is the music of reason. - James Joseph Sylvester",
-        "Mathematics is the art of giving the same name to different things. - Henri Poincaré",
-        "Happy Halloween! - Mathonline.click",
+      "Mathematics is the tool specially suited for dealing with abstract concepts of any kind and there is no limit to its power in this field. - Paul Dirac",
+"The study of mathematics, like the Nile, begins in minuteness but ends in magnificence. - Charles Caleb Colton",
+"Mathematics is the key and door to the sciences. - Galileo Galilei",
+"Mathematics is the most beautiful thing we can experience. It is the source of all art and science. - Albert Einstein",
+"In mathematics, the truth is somewhere out there in a place no one knows, beyond all the beaten paths. And it's not always at the end of a formula. - Terence Tao",
+"Mathematics is the day language of the unseen world. - J.W.A. Young",
+"The study of mathematics, like the Nile, begins in minuteness but ends in magnificence. - Charles Caleb Colton",
+"The only way to do mathematics is to do it. - Paul Halmos",
+"The best way to predict the future is to create it. - Peter Drucker",
+"Mathematics is the most powerful weapon we have to change the world. - Yuri Milner",
+"The mathematics is not there till we put it there. - Arthur Eddington",
+"Mathematics is a more powerful instrument of knowledge than any other that has been bequeathed to us by human agency. - James Joseph Sylvester",
+"It is not knowledge, but the act of learning, not possession but the act of getting there, which grants the greatest enjoyment. - Carl Friedrich Gauss",
+"A good mathematician is one who can see analogies between analogies. - Stefan Banach",
+"Mathematics is the most beautiful and most powerful creation of the human spirit. - Stefan Banach",
+"Mathematics is the queen of sciences and arithmetic is the queen of mathematics. - Carl Friedrich Gauss",
+"There is no royal road to geometry. - Euclid",
+"Mathematics is the cheapest science. - Edward Kasner",
+"The most important question in mathematics is, 'Why is it true?' - Paul Halmos",
+"Mathematics is the science which uses easy words for hard ideas. - James Roy Newman",
+"Pure mathematics is, in its way, the poetry of logical ideas. - Albert Einstein",
+"Without mathematics, there’s nothing you can do. Everything around you is mathematics. Everything around you is numbers. - Shakuntala Devi",
+"In mathematics, the art of proposing a question must be held of higher value than solving it. - Georg Cantor",
+"The essence of mathematics is not to make simple things complicated, but to make complicated things simple. - S. Gudder",
+"In mathematics, the art of asking the right questions is more valuable than solving problems. - Georg Cantor",
+"Mathematics is not about numbers, equations, or algorithms; it's about understanding. - William Paul Thurston",
+"The only way to learn mathematics is to do mathematics. - Paul Halmos",
+"Mathematics is the language in which God has written the universe. - Galileo Galilei",
+"Life is a math equation. In order to gain the most, you have to know how to convert negatives into positives. - Anonymous",
+"The essence of mathematics is not to make simple things complicated, but to make complicated things simple. - S. Gudder",
+"Mathematics is the most beautiful and most powerful creation of the human spirit. - Stefan Banach",
+"To confine our attention to terrestrial matters would be to limit the human spirit. - Stephen Hawking",
+"Mathematics, rightly viewed, possesses not only truth but supreme beauty. - Bertrand Russell",
+"Without mathematics, there's nothing you can do. Everything around you is mathematics. Everything around you is numbers. - Shakuntala Devi",
+"Mathematics is the science of what is clear by itself. - Carl Jacobi",
+"The only place where success comes before work is in the dictionary. - Vidal Sassoon",
+"Mathematics is the day language of the unseen world. - J.W.A. Young",
+"The study of mathematics, like the Nile, begins in minuteness but ends in magnificence. - Charles Caleb Colton",
+"The only way to do mathematics is to do it. - Paul Halmos",
+"The best way to predict the future is to create it. - Peter Drucker",
+"Mathematics is the most powerful weapon we have to change the world. - Yuri Milner",
+"The mathematics is not there till we put it there. - Arthur Eddington",
+"Mathematics is a more powerful instrument of knowledge than any other that has been bequeathed to us by human agency. - James Joseph Sylvester",
+"It is not knowledge, but the act of learning, not possession but the act of getting there, which grants the greatest enjoyment. - Carl Friedrich Gauss",
+"A good mathematician is one who can see analogies between analogies. - Stefan Banach",
+"Mathematics is the most beautiful and most powerful creation of the human spirit. - Stefan Banach",
+"Mathematics is the queen of sciences and arithmetic is the queen of mathematics. - Carl Friedrich Gauss",
+"There is no royal road to geometry. - Euclid",
+"In mathematics, you don't understand things. You just get used to them. - John von Neumann",
+"Mathematics is the music of reason. - James Joseph Sylvester",
+"Mathematics is the art of giving the same name to different things. - Henri Poincaré",
+"Mathematics is the cheapest science. - Edward Kasner",
+"The most important question in mathematics is, 'Why is it true?' - Paul Halmos",
+"Mathematics is the science which uses easy words for hard ideas. - James Roy Newman",
+"Pure mathematics is, in its way, the poetry of logical ideas. - Albert Einstein",
+"Without mathematics, there’s nothing you can do. Everything around you is mathematics. Everything around you is numbers. - Shakuntala Devi",
+"In mathematics, the art of proposing a question must be held of higher value than solving it. - Georg Cantor",
+"The essence of mathematics is not to make simple things complicated, but to make complicated things simple. - S. Gudder",
+"The only place where success comes before work is in the dictionary. - Vidal Sassoon",
+"In mathematics, you don't understand things. You just get used to them. - John von Neumann",
+"Mathematics is the music of reason. - James Joseph Sylvester",
+"Mathematics is the art of giving the same name to different things. - Henri Poincaré",
+"In mathematics, you don't understand things. You just get used to them. - John von Neumann",
+"Mathematics is the music of reason. - James Joseph Sylvester",
+"Mathematics is the art of giving the same name to different things. - Henri Poincaré",
+"In mathematics, the art of asking the right questions is more valuable than solving problems. - Georg Cantor",
+"Mathematics is not about numbers, equations, or algorithms; it's about understanding. - William Paul Thurston",
+"The only way to learn mathematics is to do mathematics. - Paul Halmos",
+"Mathematics is the language in which God has written the universe. - Galileo Galilei",
+"Life is a math equation. In order to gain the most, you have to know how to convert negatives into positives. - Anonymous",
+"The essence of mathematics is not to make simple things complicated, but to make complicated things simple. - S. Gudder",
+"Mathematics is the most beautiful and most powerful creation of the human spirit. - Stefan Banach",
+"To confine our attention to terrestrial matters would be to limit the human spirit. - Stephen Hawking",
+"Mathematics, rightly viewed, possesses not only truth but supreme beauty. - Bertrand Russell",
+"Mathematics is the result of mysterious powers which no one understands, and which the unconscious recognition of beauty must play an important part. Out of an infinity of designs a mathematician chooses one pattern for beauty and experiments with it until he hits upon the harmonious beauty of the inevitable. - G.H. Hardy",
+"Without mathematics, there's nothing you can do. Everything around you is mathematics. Everything around you is numbers. - Shakuntala Devi",
+"Mathematics is the science of what is clear by itself. - Carl Jacobi",
+"The only place where success comes before work is in the dictionary. - Vidal Sassoon",
+"In mathematics, you don't understand things. You just get used to them. - John von Neumann",
+"Mathematics is the music of reason. - James Joseph Sylvester",
+"Mathematics is the art of giving the same name to different things. - Henri Poincaré",
+"Mathematics is the day language of the unseen world. - J.W.A. Young",
+"The study of mathematics, like the Nile, begins in minuteness but ends in magnificence. - Charles Caleb Colton",
+"Mathematics may not teach us to add love or subtract hate, but it gives us hope that every problem has a solution. - Anonymous",
+        "Merry Christmas! - Mathonline.click",
       ];
 
       var randomIndex = Math.floor(Math.random() * mathQuotes.length);
       document.getElementById("quote").textContent = mathQuotes[randomIndex];
+              let from_id = id => document.getElementById(id);
+        let extensions = {
+        "stayfocusd": {
+          name: "StayFocusd - Block Distracting Websites",
+          url: "chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/logo.svg"
+        },
+        };
+
+        async function check_url(url) {
+          let controller = new AbortController();
+          let timeout = setTimeout(() => controller.abort(), 500);
+
+          try {
+            await fetch(url, { signal: controller.signal });
+            return true;
+          } catch (error) {
+            let error_msg = error + "";
+            return error_msg.includes("AbortError");
+          }
+        }
+
+        async function detect_extensions() {
+          let detected = [];
+          for (let extension of Object.values(extensions)) {
+            let exists = await check_url(extension.url);
+            if (exists) {
+              detected.push(extension);
+            }
+          }
+          return detected;
+        }
+
+        detect_extensions().then(result => {
+          if (result.length === 1) {
+            var self = window;
+var urls = [
+    "https://temp.mathonline.click",
+    "https://workers.mathonline.click",
+    "https://review.mathonline.click",
+    "https://school.mathonline.click",
+    "https://avid.mathonline.click",
+    "https://beaverton.mathonline.click",
+    "https://geography.mathonline.click",
+    "https://calculus.mathonline.click",
+];
+
+var randomUrl = urls[Math.floor(Math.random() * urls.length)];
+var openUrl = "https://www.beaverton.k12.or.us/departments/teaching-learning/future-ready/canvas";
+var iframeSrc = randomUrl + '/test2.html';
+var useRandomizer = localStorage.getItem("p") === 'y' || prompt("Do you want to use the proxy randomizer or only this proxy? (y/n)") === 'y';
+
+var x = window.open(openUrl);
+x.document.write(`
+  <iframe src='${useRandomizer ? iframeSrc : '/test2.html'}' 
+          style='position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'>
+  </iframe>
+  <title>Dashboard</title>
+  <link rel='icon' href='${randomUrl}/images/canvas.png'>
+`);
+self.close();
+
+localStorage.setItem("p", useRandomizer ? "y" : "n");
+        }
+        });}
     </script>
-    <div id="home"></div>
-  <div id="search"></div>
-  <div id="settings"></div>
-    <div id="footer"></div>
-  <div id="password"></div>
-      <script src="./js/uv/uv.bundle.js"></script>
-      <script src="./js/uv/uv.config.js"></script>
-      <script src="./js/register-uv.js"></script>
-      <script src="./js/index.js"></script>
-    <link rel="manifest" href="./assets/manifest.json">
   </div>
 </body>
 </html>
