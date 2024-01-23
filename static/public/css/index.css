@@ -12,7 +12,8 @@
     position: fixed;
     top: 20px;
     right: 20px;
-}
+    visibility: visible;
+  }
 #clockFace {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -94,8 +95,6 @@ body {
   cursor: pointer;
 }
 #contentFrame {
-  visibility: visible;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
