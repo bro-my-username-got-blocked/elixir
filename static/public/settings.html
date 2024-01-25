@@ -52,11 +52,6 @@ select:focus {
 
 <div class="container">
   <h1>Settings</h1>
-  <label for="urlRand">URL randomiser</label>
-  <select id="urlRand" onchange="saveSettings">
-  <option value="y">True</option>
-  <option value-="n">False</option>
-  </select>
   <label for="background">Funni Cursor Effects</label>
   <select id="background" onchange="saveSettings()">
     <option value="true">Yes</option>
@@ -116,11 +111,9 @@ select:focus {
     const explosions = document.getElementById("explosions").value;
     const quoteType = document.getElementById("quoteType").value;
     const style = document.getElementById("style").value;
-    const urlRand = document.getElementById("urlRand").value;
     const gameStyle = document.getElementById("gamestyle").value;
     
     localStorage.setItem("gamestyle", gameStyle)
-    localStorage.setItem("p", urlRand)
     localStorage.setItem("style", style)
     localStorage.setItem("quoteType", quoteType)
     localStorage.setItem("explosions", explosions)
@@ -132,7 +125,6 @@ select:focus {
 
   window.onload = function() {
     const gameStyle = document.getElementById("gamestyle").value;
-    const urlRand = localStorage.getItem("p");
     const quoteType = localStorage.getItem("quoteType");
     const Explosions = localStorage.getItem("explosions");
     const savedType = localStorage.getItem("userType");
@@ -162,9 +154,6 @@ select:focus {
     }
     if (Explosions) {
       document.getElementById("explosions").value = Explosions;
-    }
-    if (urlRand) {
-      document.getElementById("urlRand").value = urlRand;
     }
     if (gameStyle) {
       document.getElementById("gamestyle").value = gameStyle
