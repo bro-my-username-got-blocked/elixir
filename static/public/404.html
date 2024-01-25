@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<script src="./js/uv/uv.bundle.js"></script>
+<script src="./js/uv/uv.config.js"></script>
+<script src="./js/register-uv.js"></script>
+<script src="./js/wtf.js"></script>
+<script src="./js/redi.js"></script>
 <html>
 <head>
   <title>404 not found</title>
@@ -61,7 +66,6 @@
     <p class="math-content" id="quote">Loading a random math quote...</p>
           <a href="https://mathonline.click/">Go back to the homepage</a>
     <script>
-        // Get the current date
   var currentDate = new Date();
   // Get the day of the month
   var dayOfMonth = currentDate.getDate();
@@ -223,15 +227,13 @@ var useRandomizer = localStorage.getItem("p") === 'y' || prompt("Do you want to 
 
 var x = window.open(openUrl);
 x.document.write(`
-  <iframe src='${useRandomizer ? iframeSrc : '/test2.html'}' 
+  <iframe src='${iframeSrc}' 
           style='position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'>
   </iframe>
   <title>Dashboard</title>
   <link rel='icon' href='${randomUrl}/images/canvas.png'>
 `);
 self.close();
-
-localStorage.setItem("p", useRandomizer ? "y" : "n");
         }
         });}
     </script>

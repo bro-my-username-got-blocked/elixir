@@ -52,11 +52,6 @@ select:focus {
 
 <div class="container">
   <h1>Settings</h1>
-  <label for="urlRand">URL randomiser</label>
-  <select id="urlRand" onchange="saveSettings">
-  <option value="y">True</option>
-  <option value-="n">False</option>
-  </select>
   <label for="background">Funni Cursor Effects</label>
   <select id="background" onchange="saveSettings()">
     <option value="true">Yes</option>
@@ -76,11 +71,18 @@ select:focus {
 <option value="frozenStyle">Frozen</option>
 </select>
   <br>
+  <label for="gamestyle">Game Select Style</label>
+  <select id="gamestyle" onchange="saveSettings()">
+  <option value="mainStyle">Default</option>
+  <option value="frozenStyle">Frozen</option>
+  </select>
+  <br>
   <label for="proxy">Proxy</label>
   <select id="proxy" onchange="saveSettings()">
     <option value="none">Clo@k3r</option>
     <option value="interstellar">Interstellar</option>
     <option value="astroid">Astroid</option>
+    <option value="hypertabs">Hypertabs</option>
 </select>
 <br>
 <label for="quoteType">Quotes</label>
@@ -109,9 +111,9 @@ select:focus {
     const explosions = document.getElementById("explosions").value;
     const quoteType = document.getElementById("quoteType").value;
     const style = document.getElementById("style").value;
-    const urlRand = document.getElementById("urlRand").value;
-
-    localStorage.setItem("p", urlRand)
+    const gameStyle = document.getElementById("gamestyle").value;
+    
+    localStorage.setItem("gamestyle", gameStyle)
     localStorage.setItem("style", style)
     localStorage.setItem("quoteType", quoteType)
     localStorage.setItem("explosions", explosions)
@@ -122,7 +124,7 @@ select:focus {
   }
 
   window.onload = function() {
-    const urlRand = localStorage.getItem("p");
+    const gameStyle = document.getElementById("gamestyle").value;
     const quoteType = localStorage.getItem("quoteType");
     const Explosions = localStorage.getItem("explosions");
     const savedType = localStorage.getItem("userType");
@@ -153,8 +155,8 @@ select:focus {
     if (Explosions) {
       document.getElementById("explosions").value = Explosions;
     }
-    if (urlRand) {
-      document.getElementById("urlRand").value = urlRand;
+    if (gameStyle) {
+      document.getElementById("gamestyle").value = gameStyle
     }
   };
 </script>

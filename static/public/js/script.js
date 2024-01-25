@@ -36,6 +36,8 @@ function ProxyFullscreen() {
         iframeUrl = 'https://astroid.mathonline.click/worksheets';
     } else if (proxyItem === 'interstellar') {
         iframeUrl = 'https://n-eight-lime.vercel.app/'
+}else if (proxyItem === 'hypertabs'){
+  iframeUrl = 'https://math.math.mathonline.click';
 }else {
         iframeUrl = './hurr.html';
     }
@@ -77,7 +79,7 @@ function GameLoader() {
     HideButtons();
     let iframe = document.getElementById('contentFrame');
     iframe.srcdoc = `"
- <iframe src="./games.html" width="100%" height="${iframe.clientHeight}"></iframe>
+ <iframe src="https://myschoolisass.github.io/games.html" width="100%" height="${iframe.clientHeight}"></iframe>
  `;
 }
 function hideIframeContent() {
