@@ -76,6 +76,12 @@ select:focus {
 <option value="frozenStyle">Frozen</option>
 </select>
   <br>
+  <label for="gamestyle">Game Select Style</label>
+  <select id="gamestyle" onchange="saveSettings()">
+  <option value="mainStyle">Default</option>
+  <option value="frozenStyle">Frozen</option>
+  </select>
+  <br>
   <label for="proxy">Proxy</label>
   <select id="proxy" onchange="saveSettings()">
     <option value="none">Clo@k3r</option>
@@ -110,7 +116,9 @@ select:focus {
     const quoteType = document.getElementById("quoteType").value;
     const style = document.getElementById("style").value;
     const urlRand = document.getElementById("urlRand").value;
-
+    const gameStyle = document.getElementById("gamestyle").value;
+    
+    localStorage.setItem("gamestyle", gameStyle)
     localStorage.setItem("p", urlRand)
     localStorage.setItem("style", style)
     localStorage.setItem("quoteType", quoteType)
@@ -122,6 +130,7 @@ select:focus {
   }
 
   window.onload = function() {
+    const gameStyle = document.getElementById("gamestyle").value;
     const urlRand = localStorage.getItem("p");
     const quoteType = localStorage.getItem("quoteType");
     const Explosions = localStorage.getItem("explosions");
@@ -155,6 +164,9 @@ select:focus {
     }
     if (urlRand) {
       document.getElementById("urlRand").value = urlRand;
+    }
+    if (gameStyle) {
+      document.getElementById("gamestyle").value = gameStyle
     }
   };
 </script>
