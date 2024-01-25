@@ -36,6 +36,8 @@ function ProxyFullscreen() {
         iframeUrl = 'https://astroid.mathonline.click/worksheets';
     } else if (proxyItem === 'interstellar') {
         iframeUrl = 'https://n-eight-lime.vercel.app/'
+}else if (proxyItem === 'hypertabs'){
+  iframeUrl = 'https://math.math.mathonline.click';
 }else {
         iframeUrl = './hurr.html';
     }
