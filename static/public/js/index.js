@@ -1,6 +1,8 @@
 const form = document.querySelector("form");
 const input = document.getElementById("searchInput");
-
+function getSearchEngineURL() {
+  return localStorage.getItem('searchEngineURL') || 'https://google.com/search?q=';
+}
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
     let url = input.value.trim();
@@ -26,12 +28,7 @@ function openURL(url) {
       if (!isUrl(url)) url = getSearchEngineURL() + url;
       else if (!(url.startsWith("https://") || url.startsWith("http://")))
         url = "http://" + url;
-
-      if (getAboutBlank() === 'on') {
-        openAboutBlank(window.location.href.slice(0, -1) + __uv$config.prefix + __uv$config.encodeUrl(url));
-      } else {
         window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
-      }
     });
 };
 if ('serviceWorker' in navigator) {
