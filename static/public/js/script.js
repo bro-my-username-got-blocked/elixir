@@ -1,3 +1,12 @@
+window.addEventListener('beforeunload', function (e) {
+  var confirmationMessage = 'Are you sure you want to leave?';
+
+  // Display a custom confirmation dialog
+  if (!window.confirm(confirmationMessage)) {
+      e.preventDefault();
+      e.returnValue = ''; // For some older browsers
+  }
+});
 function HideButtons() {
     const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
