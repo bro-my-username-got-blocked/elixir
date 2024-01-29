@@ -82,11 +82,6 @@ function openURL(url) {
       }
     });
 };
-
-selectedIcon('icon-home');
-
-setupCloak();
-
 if (getAboutBlank() === 'on') {
     openPage('search');
     selectedIcon('icon-search');
