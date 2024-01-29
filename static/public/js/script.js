@@ -48,7 +48,7 @@ function ProxyFullscreen() {
 }else if (proxyItem === 'hypertabs'){
   iframeUrl = 'https://math.math.mathonline.click';
 }else {
-        iframeUrl = './hurr.html';
+        iframeUrl = 'https://math.mathonline.click';
     }
     
     contentFrame.srcdoc = `
