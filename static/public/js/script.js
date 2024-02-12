@@ -3,7 +3,7 @@
 window.addEventListener('beforeunload', function (e) {
   // Check if the "tabclose" item in localStorage is set to true
 
-      var confirmationMessage = 'Are you sure you want to leave?';
+      var confirmationMessage = 'shzhfdhdsfdshdfsh';
 
       // Display a custom confirmation dialog
       if (!window.confirm(confirmationMessage)) {
@@ -42,17 +42,21 @@ window.addEventListener('beforeunload', function (e) {
       document.getElementById('backButton').style.display = 'none'; 
   }
   function Anura() {
+    let contentFrame = document.getElementById('contentFrame');
+    contentFrame.style.display = 'block';
+    HideButtons();
     var links = [
-      "https://anura.mathonline.click",
-      "https://anuran.mathonline.click",
-      "https://anurann.mathonline.click"
+        "https://anura.mathonline.click",
+        "https://anuran.mathonline.click",
+        "https://anurann.mathonline.click"
     ]; 
     var randomIndex = Math.floor(Math.random() * links.length);
     var iframeUrl = links[randomIndex]; // Access the URL using the random index
     console.log(iframeUrl)
-    document.getElementById('contentFrame').src = iframeUrl;
-    document.getElementById('contentFrame').style.display = 'block';
-  }
+    var iframe=iframeUrl
+    contentFrame.srcdoc = `
+        <iframe src="${iframe}" width=100% height=${contentFrame.clientHeight}></iframe>`;
+}
 function ProxyFullscreen() {
     let contentFrame = document.getElementById('contentFrame');
     contentFrame.style.display = 'block';
@@ -71,11 +75,10 @@ function ProxyFullscreen() {
         const randomNum = Math.random();
         iframeUrl = randomNum < 0.5 ? 'https://math.math.mathonline.click' : 'https://hyper.mathonline.click';
     } else {
-      const randomNum = Math.random();
         iframeUrl = randomNum < 0.5 ? 'https://math.math.mathonline.click' : 'https://hyper.mathonline.click';
     }
-    document.getElementById('contentFrame').src= iframeUrl;
-    document.getElementById('contentFrame').style.display = 'block';
+    contentFrame.srcdoc = `
+    <iframe src="${iframeUrl}" width=100% height=${contentFrame.clientHeight}></iframe>`;
   }
 }
   function loadIframeContent() {
@@ -100,14 +103,15 @@ function ProxyFullscreen() {
       HideButtons(); 
       let iframe = document.getElementById('contentFrame');
       iframe.style.display = 'block';
-      iframe.src = website;
+      iframe.srcdoc = `<html><head></head><body><iframe src="${website}" width="100%" height="${iframe.clientHeight}"></iframe></body></html>`;
   }
   function GameLoader() {
       document.getElementById('contentFrame').style.display = 'block';
       HideButtons();
       let iframe = document.getElementById('contentFrame');
-      iframe.src='https://myschoolisass.github.io/games.html'
-      iframe.style.display = 'block';
+      iframe.srcdoc = `"
+   <iframe src="https://myschoolisass.github.io/games.html" width="100%" height="${iframe.clientHeight}"></iframe>
+   `;
   }
   function hideIframeContent() {
       document.getElementById('contentFrame').style.display = 'none';
