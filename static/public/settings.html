@@ -63,13 +63,6 @@ select:focus {
     <option value="false">No</option>
   <option value="true">Yes</option>
 </select>
-<br>
-<label for="style">Proxy Styles</label>
-<select id="style" onchange="saveSettings()">
-<option value="mainStyle">Default</option>
-<option value="darkStyle">Dark Mode</option>
-<option value="frozenStyle">Frozen</option>
-</select>
 <!--  <br>
   <label for="gamestyle">Game Select Style</label>
   <select id="gamestyle" onchange="saveSettings()">
@@ -79,9 +72,10 @@ select:focus {
   <br>
   <label for="proxy">Proxy</label>
   <select id="proxy" onchange="saveSettings()">
+    <option value="hypertabs">Hypertabs</option>
     <option value="interstellar">Interstellar</option>
     <option value="astroid">Astroid</option>
-    <option value="hypertabs">Hypertabs</option>
+    <option value="anura">Anura OS</option>
 </select>
 <br>
 <label for="quoteType">Quotes</label>
@@ -109,11 +103,9 @@ select:focus {
     const panicURL = document.getElementById("panicURL").value;
     const explosions = document.getElementById("explosions").value;
     const quoteType = document.getElementById("quoteType").value;
-    const style = document.getElementById("style").value;
  //  const gameStyle = document.getElementById("gamestyle").value;
     
  //   localStorage.setItem("gamestyle", gameStyle)
-    localStorage.setItem("style", style)
     localStorage.setItem("quoteType", quoteType)
     localStorage.setItem("explosions", explosions)
     localStorage.setItem("panicURL", panicURL);
@@ -131,11 +123,7 @@ select:focus {
     const savedProxy = localStorage.getItem("proxy");
     const Panic = localStorage.getItem("panic")
     const PanicURL = localStorage.getItem("panicURL")
-    const style = localStorage.getItem("style")
 
-    if (style) {
-      document.getElementById("style").value = style;
-    }
     if (quoteType) {
       document.getElementById("quoteType").value = quoteType;
     }
