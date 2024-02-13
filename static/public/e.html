@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Animation</title>
+<style>
+  .delete-animation {
+    position: relative;
+    animation: deleteElement 1s forwards ease-out;
+  }
+
+  @keyframes deleteElement {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="contentToDelete">
+  <!-- Your HTML content here -->
+  <p>This is a sample paragraph.</p>
+  <div>
+    <h2>This is a heading</h2>
+    <p>Another paragraph.</p>
+  </div>
+</div>
+
+<button onclick="deleteContent()">Delete All Content</button>
+
+<script>
+function deleteContent() {
+  var content = document.getElementById("contentToDelete");
+  content.classList.add("delete-animation");
+
+  setTimeout(function() {
+    content.innerHTML = ''; // Remove all HTML content
+  }, 1000); // Adjust delay to match the animation duration
+}
+</script>
+
+</body>
+</html>
