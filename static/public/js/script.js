@@ -75,6 +75,7 @@ function ProxyFullscreen() {
         const randomNum = Math.random();
         iframeUrl = randomNum < 0.5 ? 'https://anurann.mathonline.click/browser.html' : 'https://anura.mathonline.click/browser.html';
     } else {
+      const randomNum = Math.random();
         iframeUrl = randomNum < 0.5 ? 'https://anurann.mathonline.click/browser.html' : 'https://anura.mathonline.click/browser.html';
     }
     contentFrame.srcdoc = `

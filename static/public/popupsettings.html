@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launched Proxy Selector</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+.settings-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    margin-right: 10px;
+}
+</style>
+</head>
+<body>
+    <div class="settings-container">
+        <h1>Launched Proxy Settings</h1>
+        <form id="proxyForm">
+            <label for="launchedProxy">Select Proxy:</label>
+            <select id="launchedProxy" name="launchedProxy">
+                <option value="aboutbrowser">A. Aboutbrowser</option>
+                <option value="clo3kr">B. Clo@k3r</option>
+                <option value="games">C. Games</option>
+                <option value="interstellar">D. Interstellar</option>
+                <option value="astroid">E. Astroid</option>
+            </select>
+            <br>
+        </form>
+        <div id="gifDisplay" style="margin-top: 20px;"></div>
+    </div>
+    <script>
+document.getElementById('launchedProxy').addEventListener('change', function() {
+    const selection = this.value;
+    const gifDisplay = document.getElementById('gifDisplay');
+    gifDisplay.innerHTML = ''; // Clear the previous GIF
+    let gifSource;
+
+    switch (selection) {
+        case 'aboutbrowser':
+            gifSource = 'URL_TO_ABOUTBROWSER_GIF';
+            break;
+        case 'clo3kr':
+            gifSource = './images/clo@k3r.gif';
+            break;
+        case 'games':
+            gifSource = 'URL_TO_GAMES_GIF';
+            break;
+        case 'interstellar':
+            gifSource = './images/interstellar.gif';
+            break;
+        case 'astroid':
+            gifSource = './images/astroid.gif';
+            break;
+        default:
+            gifSource = '';
+    }
+
+    if (gifSource) {
+        const img = document.createElement('img');
+        img.src = gifSource;
+        img.alt = selection;
+        img.style.width = '100%'; // Set the image width to 35%
+        gifDisplay.appendChild(img);
+    }
+});
+
+    </script>
+</body>
+</html>
